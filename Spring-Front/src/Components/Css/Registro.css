@@ -1,0 +1,81 @@
+/* FORMULARIO DE REGISTRO */
+.formularioRegistro {
+  margin-top: 50px;
+  max-width: 400px;
+  /* Esto centra el formulario horizontalmente */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  text-align: center;
+  /* Centra el contenido del formulario */
+}
+
+.input-pair #email {
+  display: block;
+  width: 100%;
+  /* Ajustado para que ocupe el ancho correcto */
+}
+
+.input-email {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.nombre-apellido,
+.passwords,
+.documento-pais,
+.input-pair {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-pair {
+  flex-direction: column;
+  width: calc(50% - 5px);
+  /* Ajustado para ocupar el ancho completo con un espacio entre ellos */
+  margin-right: 10px;
+  /* Añade un margen entre los elementos */
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.input-pair:last-child {
+  margin-right: 0;
+  /* Elimina el margen del último par de entrada para evitar que se desborde */
+}
+
+.label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  background-color: #0077f6;
+  color: white;
+  padding: 14px 20px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  width: 50%;
+  /* Ajustado para ocupar el ancho completo */
+  transition: transform 0.4s ease;
+  /* Ajustado el tiempo de transición */
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+  box-shadow: 0px 3px 8px black;
+}
