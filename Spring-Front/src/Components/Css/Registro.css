@@ -79,3 +79,29 @@ button[type="submit"]:hover {
   transform: scale(1.05);
   box-shadow: 0px 3px 8px black;
 }
+.tienes-cuenta{
+    margin-bottom: 0;
+}
+/* MUESTR ERROR CUANDO LA PASSWORD NO COINCIDE */
+.error-message {
+  background-color: rgba(255, 0, 0, 0.3); /* Rojo con 50% de opacidad */
+  text-align: center;
+  padding: 15px; /* Ajusta el relleno según sea necesario */
+  margin-top: 10px; /* Ajusta el margen superior para superponerse al contenido anterior */
+  border-radius: 10px; /* Redondea los bordes */
+  border: 1px solid rgba(233, 3, 3, 0.3);
+}
+.registration-message {
+  text-align: center;
+  padding: 15px; /* Ajusta el relleno según sea necesario */
+  margin-top: 10px; /* Ajusta el margen superior para superponerse al contenido anterior */
+  border-radius: 10px; /* Redondea los bordes */
+}
+
+.registration-message.success {
+  background-color: lightgreen; /* Cambia el color de fondo a verde para éxito */
+}
+
+.registration-message.error {
+  background-color: lightcoral; /* Cambia el color de fondo a rojo para error */
+}

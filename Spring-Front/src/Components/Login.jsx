@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Css/Login.css";
 
-
 export function FormularioLogin({ setUser }) {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
@@ -39,10 +38,9 @@ export function FormularioLogin({ setUser }) {
         }
     };
 
-    
-
-    // ACA TENGO QUE IMPLEMENTAR LA LOGICA DE RECUPERAR LA CONTRASEÑA
-    const handleForgotPassword = () => {
+    // Método para manejar el evento de clic en "¿Olvidaste tu Contraseña?"
+    const handleForgotPassword = (e) => {
+        e.preventDefault();
         // Aquí puedes implementar la lógica para redirigir al usuario a la página de restablecimiento de contraseña
         // Por ejemplo:
         window.location.href = '/forgot-password';
@@ -50,27 +48,19 @@ export function FormularioLogin({ setUser }) {
 
     return (
         <section>
-
             <form className="formularioLogin" onSubmit={handleSubmit}>
-
                 <h1 className='titulo'>Login</h1>
-
                 <div className="label-login">
                     <label>Usuario</label>
                     <input type="text" value={name} onChange={e => setName(e.target.value)} required placeholder="Username" />
                 </div>
-
                 <div className="label-login">
                     <label>Contraseña</label>
                     <input type="password" value={password} onChange={e => setPassword(e.target.value)} required placeholder="Password" />
                 </div>
-
-                <a className="Olvidaste" href="">¿Olvidaste tu Contraseña?</a> <br />
-
                 <button type="submit">Iniciar Sesión</button>
-
+                <a className="Olvidaste" href="#" onClick={handleForgotPassword}>¿Olvidaste tu Contraseña?</a>
             </form>
-
         </section>
     );
 }

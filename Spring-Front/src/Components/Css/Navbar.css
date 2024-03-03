@@ -1,22 +1,43 @@
 body {
     padding-top: 2cm;
 }
+
 .navbar {
     background: rgb(134, 33, 216);
-    height: 2cm; /* Grosor de 2 centímetros */
-    width: 100vw; /* Abarca todo el ancho de la ventana */
-    position: fixed; /* Fija la posición en la parte superior */
-    top: 0; /* Alinea en la parte superior */
-    left: 0; /* Asegura que esté alineado a la izquierda */
-    display: flex; /* Usa flexbox para alinear los elementos del nav */
-    justify-content: center; /* Alinea los elementos del nav al centro horizontalmente */
-    align-items: center; /* Alinea los elementos del nav al centro verticalmente */
+    height: 1.5cm;
+    /* Grosor de 2 centímetros */
+    width: 100%;
+    /* Abarca todo el ancho de la ventana */
+    position: fixed;
+    /* Fija la posición en la parte superior */
+    top: 0;
+    /* Alinea en la parte superior */
+    left: 0;
+    /* Asegura que esté alineado a la izquierda */
+    /*display: flex;  Usa flexbox para alinear los elementos del nav */
+    justify-content: center;
+    /* Alinea los elementos del nav al centro horizontalmente */
+    align-items: center;
+    /* Alinea los elementos del nav al centro verticalmente */
+
 }
 
-.navbar nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+.playcode {
+  
+    transition: transform 0.4s ease;
+}
+
+.playcode:hover {
+    transform: scale(1.1);
+}
+
+#panel {
+    transition: transform 0.4s ease;
+    margin-left: 3%;
+    float: left;
+}
+#panel:hover {
+    transform: scale(1.1);
 }
 
 .navbar nav ul li {
@@ -24,7 +45,25 @@ body {
     margin: 0 10px;
 }
 
+
 .navbar nav ul li a {
     color: white;
     text-decoration: none;
+}
+
+
+.panel2{
+    transition: transform 0.4s ease;
+    margin-left: 3%;
+}
+.panel2:hover{
+    transform: scale(1.1);
+}
+.cerrarSesion {
+    transition: transform 0.4s ease;
+    margin-right: 3%;
+    float: right;
+}
+.cerrarSesion:hover {
+    transform: scale(1.1);
 }
