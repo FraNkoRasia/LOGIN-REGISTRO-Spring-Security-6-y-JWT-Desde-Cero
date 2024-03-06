@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Css/Login.css";
 
-export function FormularioLogin({ setUser }) {
+export default function Login({ setUser }) {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
-    const [showPassword, setShowPassword] = useState(false); // Estado para controlar la visibilidad de la contraseña
     const [error, setError] = useState(false);
 
+  
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -29,7 +29,7 @@ export function FormularioLogin({ setUser }) {
                 const { jwt } = response.data; // Extraer el token del objeto de respuesta
                 localStorage.setItem("token", jwt); // Guardar el token en el Local Storage
                 setUser(jwt); // Establecer el token como el valor de usuario en el estado
-                window.location.href = "/home"; // Redirigir al usuario a la página de inicio
+                window.location.href = "/dashboard"; // Redirigir al usuario a la página de inicio
             } else {
                 throw new Error(`Error: ${response.status} - ${response.statusText}`);
             }

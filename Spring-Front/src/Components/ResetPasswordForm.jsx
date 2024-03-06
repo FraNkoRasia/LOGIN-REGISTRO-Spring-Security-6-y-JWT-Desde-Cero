@@ -10,7 +10,7 @@ function ResetPasswordForm() {
   const urlParams = new URLSearchParams(window.location.search);
   const token = urlParams.get('token');
 
-  console.log(token); // Esto imprimirá el valor del token en la consola
+  //console.log(token); // Esto imprimirá el valor del token en la consola
 
 
   const handleSubmit = async (e) => {
