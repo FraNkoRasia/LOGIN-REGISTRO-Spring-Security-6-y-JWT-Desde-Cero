@@ -86,7 +86,7 @@ public class AuthenticationController implements WebMvcConfigurer {
         return "este endpoint es publico";
     }
 
-// Cambiar la contraseña del usuario utilizando el token de restablecimiento
+    // Cambiar la contraseña del usuario utilizando el token de restablecimiento
     @PreAuthorize("permitAll")
     @PostMapping("/reset-password/{token}")
     public ResponseEntity<String> resetPassword(@PathVariable String token, @RequestBody Map<String, String> requestBody) {
@@ -114,7 +114,8 @@ public class AuthenticationController implements WebMvcConfigurer {
     private String generateResetToken(String email) {
         // Generar un token único para el restablecimiento de contraseña
         String resetToken = UUID.randomUUID().toString();
-        System.out.println("ESTE ES EL TOKEN QUE LLEGO Al EMAIL QUE LO SOLICITO: " + resetToken);
+        
+        // System.out.println("ESTE ES EL TOKEN QUE LLEGO Al EMAIL QUE LO SOLICITO: " + resetToken);
 
         // Persistir el token en la base de datos junto con el correo electrónico del usuario
         resetTokenRepository.save(new ResetToken(resetToken, email));
