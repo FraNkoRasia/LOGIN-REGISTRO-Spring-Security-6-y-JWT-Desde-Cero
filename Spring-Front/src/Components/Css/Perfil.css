@@ -1,0 +1,14 @@
+.perfil{
+    margin-top: 50px;
+    width: 400px;
+    /* Esto centra el formulario horizontalmente */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    text-align: left;
+    /* Centra el contenido del formulario */
+}
+.botonPerfil{
+    text-align: center;
+}

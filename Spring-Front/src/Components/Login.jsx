@@ -51,15 +51,15 @@ export default function Login({ setUser }) {
             <form className="formularioLogin" onSubmit={handleSubmit}>
                 <h1 className='titulo'>Login</h1>
                 <div className="label-login">
-                    <label>Usuario</label>
+                    <label>User</label>
                     <input type="text" value={name} onChange={e => setName(e.target.value)} required placeholder="Username" />
                 </div>
                 <div className="label-login">
-                    <label>Contraseña</label>
+                    <label>Password</label>
                     <input type="password" value={password} onChange={e => setPassword(e.target.value)} required placeholder="Password" />
                 </div>
-                <button type="submit">Iniciar Sesión</button>
-                <a className="Olvidaste" href="#" onClick={handleForgotPassword}>¿Olvidaste tu Contraseña?</a>
+                <button type="submit">Start Session</button>
+                <a className="Olvidaste" href="#" onClick={handleForgotPassword}>Have you forgotten your password?</a>
             </form>
         </section>
     );

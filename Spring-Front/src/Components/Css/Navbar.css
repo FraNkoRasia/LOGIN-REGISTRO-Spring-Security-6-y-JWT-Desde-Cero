@@ -4,7 +4,7 @@ body {
 
 .navbar {
     background: rgb(134, 33, 216);
-    height: 1.5cm;
+    height: 2cm;
     /* Grosor de 2 centímetros */
     width: 100%;
     /* Abarca todo el ancho de la ventana */
@@ -23,7 +23,7 @@ body {
 }
 
 .playcode {
-  
+
     transition: transform 0.4s ease;
 }
 
@@ -36,6 +36,7 @@ body {
     margin-left: 3%;
     float: left;
 }
+
 #panel:hover {
     transform: scale(1.1);
 }
@@ -47,23 +48,49 @@ body {
 
 
 .navbar nav ul li a {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
 
 
-.panel2{
+.panel2 {
     transition: transform 0.4s ease;
     margin-left: 3%;
 }
-.panel2:hover{
+
+.panel2:hover {
     transform: scale(1.1);
 }
+
 .cerrarSesion {
     transition: transform 0.4s ease;
     margin-right: 3%;
     float: right;
+    background-color: rgb(60, 3, 77);
+
+    color: white;
 }
+
 .cerrarSesion:hover {
     transform: scale(1.1);
+}
+
+.profile-container {
+    position: relative;
+}
+
+.profile-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 205px;
+    display: none;
+    background-color: rgb(134, 33, 216);
+    padding: 5px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    opacity: 0.9;
+    border: 1px solid;
+    box-shadow: 7px 7px 30px;
 }

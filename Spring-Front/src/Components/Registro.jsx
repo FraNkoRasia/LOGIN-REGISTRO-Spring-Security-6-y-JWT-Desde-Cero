@@ -46,14 +46,14 @@ export default function Registro() {
     <div>
       <div className="contenedor-registro">
         <form className="formularioRegistro" onSubmit={handleSubmit}>
-          <h1 className='titulo'>Registro</h1>
+          <h1 className='titulo'>Register</h1>
           <div className="nombre-apellido">
             <div className="input-pair">
-              <label htmlFor="name">Nombre </label>
+              <label htmlFor="name">Name </label>
               <input type="text" name="name" id="name" placeholder="Ingresa tu nombre" onChange={handleChange} required />
             </div>
             <div className="input-pair">
-              <label htmlFor="lastname">Apellido </label>
+              <label htmlFor="lastname">Lastname </label>
               <input type="text" name="lastname" id="lastname" placeholder="Ingresa tu apellido" onChange={handleChange} required />
             </div>
           </div>
@@ -67,22 +67,22 @@ export default function Registro() {
               <input type="password" name="password" id="password" placeholder="Ingresa tu contraseña" onChange={handleChange} required />
             </div>
             <div className="input-pair">
-              <label htmlFor="repitePassword">Repite tu Password </label>
+              <label htmlFor="repitePassword">Repeat your password </label>
               <input type="password" name="repitePassword" id="repitePassword" placeholder="Repite tu contraseña" onChange={handleChange} required />
 
             </div>
           </div>
           <div className="documento-pais">
             <div className="input-pair">
-              <label htmlFor="passport">Documento </label>
+              <label htmlFor="passport">Document </label>
               <input type="number" name="passport" id="passport" placeholder="Ingresa tu documento" onChange={handleChange} required />
             </div>
             <div className="input-pair">
-              <label htmlFor="phone">Teléfono </label>
+              <label htmlFor="phone">Phone </label>
               <input type="text" name="phone" id="phone" placeholder="Ingresa tu teléfono" onChange={handleChange} required />
             </div>
           </div>
-          <button type="submit">Registrar</button>
+          <button type="submit">Register</button>
           <p className='tienes-cuenta'>¿Ya tienes una cuenta? =&gt; <Link to="/login">Login</Link></p>
         </form>
         {passwordError && <p className="error-message">{passwordError}</p>}
