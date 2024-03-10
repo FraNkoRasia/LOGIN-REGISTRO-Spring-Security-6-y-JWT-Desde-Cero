@@ -1,33 +1,33 @@
-// Perfil.jsx
 import './Css/Perfil.css';
 import React from 'react';
 
 export default function Perfil() {
   return (
 
-    <div>
-       <h1 align="center">Modify your Profile</h1>
+    <div className="container">
+
+      <h1 className='h1'>Modify your Profile</h1>
 
       <form className='perfil'>
-       
+
         <div>
           <label for="nombre" class="form-label">Name</label>
-          <input type="text" name="nombre" id="nombre" />
+          <input type="text" name="nombre" id="nombre" placeholder='Your Name' />
         </div>
 
         <div>
           <label for="apellido" class="form-label">Lastname</label>
-          <input type="text" name="apellido" id="apellido" />
+          <input type="text" name="apellido" id="apellido"  placeholder='Your Lastname'/>
         </div>
 
         <div>
           <label for="email" class="form-label">Email</label>
-          <input type="text" name="email" id="email" />
+          <input type="text" name="email" id="email"  placeholder='Your Email'/>
         </div>
 
         <div>
           <label for="telefono" class="form-label">Phone</label>
-          <input type="text" name="telefono" id="telefono" />
+          <input type="text" name="telefono" id="telefono"  placeholder='Your Phone'/>
         </div>
 
         <div>

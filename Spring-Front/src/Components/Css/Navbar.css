@@ -4,7 +4,7 @@ body {
 
 .navbar {
     background: rgb(134, 33, 216);
-    height: 2cm;
+    height: 1.8cm;
     /* Grosor de 2 centímetros */
     width: 100%;
     /* Abarca todo el ancho de la ventana */
@@ -35,10 +35,15 @@ body {
     transition: transform 0.4s ease;
     margin-left: 3%;
     float: left;
+
 }
 
 #panel:hover {
     transform: scale(1.1);
+}
+
+ul {
+    margin-top: 20px;
 }
 
 .navbar nav ul li {
@@ -67,8 +72,9 @@ body {
     margin-right: 3%;
     float: right;
     background-color: rgb(60, 3, 77);
-
+    box-shadow: 0px 3px 8px black;
     color: white;
+    margin-top: -10px;
 }
 
 .cerrarSesion:hover {
@@ -81,9 +87,9 @@ body {
 
 .profile-dropdown {
     position: absolute;
-    top: 100%;
+    top: 135%;
     left: 0;
-    width: 205px;
+    width: 215px;
     display: none;
     background-color: rgb(134, 33, 216);
     padding: 5px;
@@ -92,5 +98,18 @@ body {
     flex-direction: column;
     opacity: 0.9;
     border: 1px solid;
-    box-shadow: 7px 7px 30px;
+    box-shadow: 0px 0px 30px;
+}
+
+.profile-dropdown li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.profile-dropdown li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Color de fondo al pasar el cursor */
+    border-radius: 5px;
+    /* Borde redondeado opcional */
 }
