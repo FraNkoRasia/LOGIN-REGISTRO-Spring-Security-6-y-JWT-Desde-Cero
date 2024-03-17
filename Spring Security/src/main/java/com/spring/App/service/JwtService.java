@@ -35,6 +35,12 @@ public class JwtService {
         return Jwts.builder()
                 .setClaims(extraClaims)
                 .setSubject(user.getUsername())
+                .claim("userId", user.getId())         // Incluye el ID del usuario en el token
+                .claim("username", user.getUsername()) // Incluye el email del usuario en el token
+                .claim("name", user.getName())         // Incluye el nombre del usuario en el token
+                .claim("lastname", user.getLastname()) // Incluye el apellido del usuario en el token
+                .claim("phone", user.getPhone())       // Incluye el teléfono del usuario en el token
+                .claim("passport", user.getPassport()) // Incluye el pasaporte del usuario en el token
                 .setIssuedAt(issuedAt)
                 .setExpiration(expiration)
                 .setHeaderParam(Header.TYPE, Header.JWT_TYPE)
@@ -52,7 +58,7 @@ public class JwtService {
         return extractAllClaims(jwt).getSubject();
     }
 
-    private Claims extractAllClaims(String jwt) {
+    public Claims extractAllClaims(String jwt) {
         return Jwts.parserBuilder().setSigningKey(generateKey()).build()
                 .parseClaimsJws(jwt).getBody();
     }

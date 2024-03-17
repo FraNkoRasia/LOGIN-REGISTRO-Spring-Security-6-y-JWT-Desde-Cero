@@ -87,7 +87,7 @@ ul {
 
 .profile-dropdown {
     position: absolute;
-    top: 135%;
+    top: 35%;
     left: 0;
     width: 215px;
     display: none;
@@ -96,7 +96,6 @@ ul {
     z-index: 1;
     display: flex;
     flex-direction: column;
-    opacity: 0.9;
     border: 1px solid;
     box-shadow: 0px 0px 30px;
 }
@@ -104,7 +103,7 @@ ul {
 .profile-dropdown li a {
     color: white;
     text-decoration: none;
-    padding: 5px;
+    padding:5px;
 }
 
 .profile-dropdown li a:hover {

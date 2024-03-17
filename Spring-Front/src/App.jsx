@@ -6,33 +6,36 @@ import Home from './Components/Home';
 import Login from './Components/Login';
 import Registro from './Components/Registro';
 import Perfil from './Components/Perfil';
+import Contacto from './Components/Contacto';
 import EditPassword from './Components/EditPassword';
-import ForgotPassword from './Components/ForgotPassword'; // Importa el componente ForgotPassword aquí
-import ResetPasswordForm from './Components/ResetPasswordForm'; // Importa el componente ResetPasswordForm aquí
+import ForgotPassword from './Components/ForgotPassword'; 
+import ResetPasswordForm from './Components/ResetPasswordForm';
 import ProtectedRoute from './Components/ProtectedRoute';
 import { useLocalStorage } from 'react-use';
+import { jwtDecode } from 'jwt-decode';
 
 
 function App() {
-  // const [user, setUser] = useState(null);
   const [user, setUser] = useLocalStorage('user');
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      setUser(token);
+      setUser(jwtDecode(token));
     }
   }, []);
+
 
   return (
     <BrowserRouter>
       <Navbar user={user} setUser={setUser} />
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* RUTA - DASHBOARD Y PERFIL - PROTEGIDA */}
+        {/* RUTAS PROTEGIDAS - PARA USUARIOS LOGUEADOS */}
         <Route element={<ProtectedRoute canActivate={user} />}>
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/perfil" element={<Perfil />} />
-          <Route path="/editPassword" element={<EditPassword />} />
+          <Route path="/dashboard" element={<Dashboard user={user} />} />
+          <Route path="/perfil" element={<Perfil user={user} />} />
+          <Route path="/editPassword" element={<EditPassword user={user} />} />
+          <Route path="/contacto" element={<Contacto />} />
         </Route>
 
         {/* Rutas para usuarios no logueados */}
@@ -42,7 +45,7 @@ function App() {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/auth/reset-password" element={<ResetPasswordForm />} />
         </Route>
-        
+
       </Routes>
     </BrowserRouter>
 

@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Css/Login.css";
+import { jwtDecode } from 'jwt-decode';
+
 
 export default function Login({ setUser }) {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(false);
 
-  
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -28,7 +30,7 @@ export default function Login({ setUser }) {
             if (response.status === 200) {
                 const { jwt } = response.data; // Extraer el token del objeto de respuesta
                 localStorage.setItem("token", jwt); // Guardar el token en el Local Storage
-                setUser(jwt); // Establecer el token como el valor de usuario en el estado
+                setUser(jwtDecode); // Establecer el token como el valor de usuario en el estado y desencriptando
                 window.location.href = "/dashboard"; // Redirigir al usuario a la página de inicio
             } else {
                 throw new Error(`Error: ${response.status} - ${response.statusText}`);

@@ -73,7 +73,7 @@ public class AuthenticationController implements WebMvcConfigurer {
 
     @PreAuthorize("permitAll")
     @PostMapping("/authenticate")
-    public ResponseEntity<AuthenticationResponse> login(//AuthenticationResponse se crea en el paquete DTO, adentro va a estar un JWT (JSON WEB TOKEN)
+    public ResponseEntity<AuthenticationResponse> login(//AuthenticationResponse se crea en el paquete DTO (DATA TRANSFER Objects ), adentro va a estar un JWT (JSON WEB TOKEN)
             @RequestBody @Valid AuthenticationRequest authRequest) {//AuthenticationRequest creado en el DTO
         AuthenticationResponse jwtDto = authenticationService.login(authRequest);
         return ResponseEntity.ok(jwtDto);

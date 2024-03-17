@@ -29,7 +29,8 @@ export default function Navbar({ user, setUser }) {
     };
 
     console.log("Valor actual de user en Navbar:", user); // Log user information
-
+    console.log(JSON.stringify(user));
+    
     if (user === null) {
         // Render content for non-authenticated users (unchanged)
         return (
@@ -59,6 +60,7 @@ export default function Navbar({ user, setUser }) {
                 <nav>
                     <ul>
                         <li><Link id="panel" to="/dashboard">Dashboard</Link></li>
+
                         <li className="profile-container"> {/* Wrap "Profile" in a container */}
                             <Link id="profile" onClick={handleProfileClick}>
                                 Profile {isProfileDropdownOpen ? <FontAwesomeIcon icon={faAngleUp} /> : <FontAwesomeIcon icon={faAngleDown} />}
@@ -71,6 +73,9 @@ export default function Navbar({ user, setUser }) {
                                 </ul>
                             )}
                         </li>
+
+                        <li><Link to="/contacto">Contacto</Link></li>
+
                         <li>
                             <button className="cerrarSesion" onClick={handleLogout}>
                                 Close Session

@@ -16,7 +16,6 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-
 /**
  *
  * @author FraNko
@@ -43,9 +42,8 @@ public class HttpSecurityConfig {
 
         return http.build();
     }
-    
-    //A CONTINUACION AUTORIZACIONES SEGUN SU ROL
 
+    //A CONTINUACION AUTORIZACIONES SEGUN SU ROL
     //ENDPOINTS PUBLICOS
     private static Customizer<AuthorizeHttpRequestsConfigurer<HttpSecurity>.AuthorizationManagerRequestMatcherRegistry> builderRequestMatchers() {
         return authConfig -> {
