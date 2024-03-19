@@ -8,11 +8,12 @@ import Registro from './Components/Registro';
 import Perfil from './Components/Perfil';
 import Contacto from './Components/Contacto';
 import EditPassword from './Components/EditPassword';
-import ForgotPassword from './Components/ForgotPassword'; 
-import ResetPasswordForm from './Components/ResetPasswordForm';
+import ForgotPassword from './Components/ForgotPassword'; // Importa el componente ForgotPassword aquí
+import ResetPasswordForm from './Components/ResetPasswordForm'; // Importa el componente ResetPasswordForm aquí
 import ProtectedRoute from './Components/ProtectedRoute';
 import { useLocalStorage } from 'react-use';
 import { jwtDecode } from 'jwt-decode';
+import Footer from './Components/Footer';
 
 
 function App() {
@@ -45,8 +46,8 @@ function App() {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/auth/reset-password" element={<ResetPasswordForm />} />
         </Route>
-
       </Routes>
+      <Footer />
     </BrowserRouter>
 
   );

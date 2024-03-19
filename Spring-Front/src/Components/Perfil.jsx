@@ -1,6 +1,7 @@
 import './Css/Perfil.css';
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate
 
 export default function Perfil({ user }) {
   const [name, setName] = useState('');
@@ -9,7 +10,7 @@ export default function Perfil({ user }) {
   const [phone, setPhone] = useState('');
   const [passport, setPassport] = useState('');
   const [currentPassword, setCurrentPassword] = useState('');
-
+  const navigate = useNavigate(); // Obtiene la función de navegación
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -25,7 +26,7 @@ export default function Perfil({ user }) {
       });
       console.log(response.data);
       alert("Perfil modificado exitosamente");
-      window.location.href = "/dashboard";
+      navigate('/dashboard'); // Redirige al usuario a la página de inicio del dashboard
       // Aquí podrías redirigir al usuario a otra página o realizar cualquier otra acción necesaria después de modificar la contraseña
     } catch (error) {
       console.error(error);
@@ -74,7 +75,14 @@ export default function Perfil({ user }) {
           <button type="submit">Modify</button>
         </div>
       </form>
+      <p>a</p>
+      <p>a</p>
+      <p>a</p>
+      <p>a</p>
+      
+      
     </div>
+
 
   );
 }

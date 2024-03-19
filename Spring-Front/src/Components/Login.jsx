@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Css/Login.css";
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate
 import { jwtDecode } from 'jwt-decode';
-
 
 export default function Login({ setUser }) {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(false);
-
+    const navigate = useNavigate(); // Obtiene la función de navegación
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -28,10 +28,10 @@ export default function Login({ setUser }) {
                 }
             );
             if (response.status === 200) {
-                const { jwt } = response.data; // Extraer el token del objeto de respuesta
-                localStorage.setItem("token", jwt); // Guardar el token en el Local Storage
-                setUser(jwtDecode); // Establecer el token como el valor de usuario en el estado y desencriptando
-                window.location.href = "/dashboard"; // Redirigir al usuario a la página de inicio
+                const { jwt } = response.data;
+                localStorage.setItem("token", jwt);
+                setUser(jwtDecode(jwt)); // Decodifica el token y establece el usuario
+                navigate('/dashboard'); // Redirige al usuario a la página de inicio del dashboard
             } else {
                 throw new Error(`Error: ${response.status} - ${response.statusText}`);
             }
@@ -45,7 +45,7 @@ export default function Login({ setUser }) {
         e.preventDefault();
         // Aquí puedes implementar la lógica para redirigir al usuario a la página de restablecimiento de contraseña
         // Por ejemplo:
-        window.location.href = '/forgot-password';
+        navigate('/forgot-password');
     };
 
     return (

@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Css/formEditPassword.css';
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate
 
 export default function EditPassword({ user }) {
     const [currentPassword, setCurrentPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
     const [newPassword2, setNewPassword2] = useState('');
-    
+    const navigate = useNavigate(); // Obtiene la función de navegación
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -23,7 +24,7 @@ export default function EditPassword({ user }) {
             });
             console.log(response.data);
             alert("Contraseña modificada exitosamente");
-            window.location.href = "/dashboard";
+            navigate('/dashboard'); // Redirige al usuario a la página de inicio del dashboard
             // Aquí podrías redirigir al usuario a otra página o realizar cualquier otra acción necesaria después de modificar la contraseña
         } catch (error) {
             console.error(error);

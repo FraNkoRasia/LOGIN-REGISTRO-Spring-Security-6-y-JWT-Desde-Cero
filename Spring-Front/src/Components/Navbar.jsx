@@ -29,7 +29,7 @@ export default function Navbar({ user, setUser }) {
     };
 
     console.log("Valor actual de user en Navbar:", user); // Log user information
-    console.log(JSON.stringify(user));
+   // console.log(JSON.stringify(user));
     
     if (user === null) {
         // Render content for non-authenticated users (unchanged)
@@ -84,6 +84,7 @@ export default function Navbar({ user, setUser }) {
 
                     </ul>
                 </nav>
+               
             </header>
         );
     }
