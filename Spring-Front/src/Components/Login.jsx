@@ -49,7 +49,7 @@ export default function Login({ setUser }) {
     };
 
     return (
-        <section>
+        <div className="contenedor-login">
             <form className="formularioLogin" onSubmit={handleSubmit}>
                 <h1 className='titulo'>Login</h1>
                 <div className="label-login">
@@ -63,6 +63,6 @@ export default function Login({ setUser }) {
                 <button type="submit">Start Session</button>
                 <a className="Olvidaste" href="#" onClick={handleForgotPassword}>Have you forgotten your password?</a>
             </form>
-        </section>
+        </div>
     );
 }

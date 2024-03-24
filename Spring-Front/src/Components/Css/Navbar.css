@@ -1,7 +1,6 @@
-body {
-    padding-top: 2cm;
+.container{
+    padding-top: 1.8cm;
 }
-
 .navbar {
     background: rgb(134, 33, 216);
     height: 1.8cm;

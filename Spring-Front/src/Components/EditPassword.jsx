@@ -35,9 +35,9 @@ export default function EditPassword({ user }) {
 
     return (
         <div className="container">
-            <div className='h1'>
+            
                 <h1 align="center">Modify Password</h1>
-            </div>
+            
 
             <form className='formEditPassword' onSubmit={handleSubmit}>
                 <div>

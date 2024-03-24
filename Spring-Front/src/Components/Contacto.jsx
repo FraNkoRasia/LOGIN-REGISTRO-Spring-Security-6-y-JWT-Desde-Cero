@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import './Css/Footer.css';
 
 export default function Contacto() {
     return (
-        <div>
-            <h2>Esta es la pagina para contactarse con un Admin</h2>
+        <div className="container">
+            <h1 align="center">Esta es la página para contactarse con un Admin</h1>
         </div>
     );
 }

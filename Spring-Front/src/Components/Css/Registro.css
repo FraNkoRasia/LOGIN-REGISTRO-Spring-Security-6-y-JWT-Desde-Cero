@@ -9,6 +9,17 @@
   background-color: #f9f9f9;
   text-align: center;
   /* Centra el contenido del formulario */
+
+}
+
+.contenedor-registro {
+  padding-top: 1.8cm;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  min-width: auto;
+  min-height: 0 auto;
 }
 
 .input-pair #email {
@@ -79,29 +90,48 @@ button[type="submit"]:hover {
   transform: scale(1.05);
   box-shadow: 0px 3px 8px black;
 }
-.tienes-cuenta{
-    margin-bottom: 0;
+
+.tienes-cuenta {
+  margin-bottom: 0;
 }
+
 /* MUESTR ERROR CUANDO LA PASSWORD NO COINCIDE */
 .error-message {
-  background-color: rgba(255, 0, 0, 0.3); /* Rojo con 50% de opacidad */
+  width: 400px;
+  background-color: rgba(255, 0, 0, 0.3);
+  /* Rojo con 50% de opacidad */
   text-align: center;
-  padding: 15px; /* Ajusta el relleno según sea necesario */
-  margin-top: 10px; /* Ajusta el margen superior para superponerse al contenido anterior */
-  border-radius: 10px; /* Redondea los bordes */
-  border: 1px solid rgba(233, 3, 3, 0.3);
+  padding: 15px;
+  /* Ajusta el relleno según sea necesario */
+  margin-top: 30px;
+  /* Ajusta el margen superior para superponerse al contenido anterior */
+  border-radius: 10px;
+  /* Redondea los bordes */
+ 
 }
+
 .registration-message {
+  width: 400px;
   text-align: center;
-  padding: 15px; /* Ajusta el relleno según sea necesario */
-  margin-top: 10px; /* Ajusta el margen superior para superponerse al contenido anterior */
-  border-radius: 10px; /* Redondea los bordes */
+  padding: 15px;
+  /* Ajusta el relleno según sea necesario */
+  margin-top: 30px;
+  /* Ajusta el margen superior para superponerse al contenido anterior */
+  border-radius: 10px;
+  /* Redondea los bordes */
 }
 
 .registration-message.success {
-  background-color: lightgreen; /* Cambia el color de fondo a verde para éxito */
+  width: 400px;
+  margin-top: 30px;
+  background-color: lightgreen;
+  /* Cambia el color de fondo a verde para éxito */
 }
 
 .registration-message.error {
-  background-color: lightcoral; /* Cambia el color de fondo a rojo para error */
+  width: 400px;
+  margin-top: 30px;
+  background-color: rgba(255, 0, 0, 0.3);
+  border: none;
+  /* Cambia el color de fondo a rojo para error */
 }

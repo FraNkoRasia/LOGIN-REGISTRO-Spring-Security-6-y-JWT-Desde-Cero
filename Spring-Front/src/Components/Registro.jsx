@@ -15,7 +15,7 @@ export default function Registro() {
   });
 
   const [passwordError, setPasswordError] = useState('');
-  const [registrationMessage, setRegistrationMessage] = useState(''); // Agrega este estado para manejar el mensaje de registro
+  const [registrationMessage, setRegistrationMessage] = useState('');
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -24,9 +24,9 @@ export default function Registro() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Verificar que las contraseñas sean iguales
     if (formData.password !== formData.repitePassword) {
       setPasswordError('Las contraseñas no coinciden');
+      setTimeout(() => setPasswordError(''), 5000); // Limpiar el mensaje de error después de 5 segundos
       return;
     } else {
       setPasswordError('');
@@ -35,10 +35,12 @@ export default function Registro() {
     try {
       const response = await axios.post('http://localhost:8080/registro', formData);
       console.log(response.data); // Manejar la respuesta del backend según sea necesario
-      setRegistrationMessage('Registro Exitoso'); // Establecer el mensaje de éxito
+      setRegistrationMessage('Registro Exitoso');
+      setTimeout(() => setRegistrationMessage(''), 5000); // Limpiar el mensaje de registro después de 5 segundos
     } catch (error) {
       console.error('Error al registrar: Email en uso', error);
-      setRegistrationMessage('El Email ya se encuentra Registrado'); // Establecer el mensaje de error
+      setRegistrationMessage('El Email ya se encuentra Registrado');
+      setTimeout(() => setRegistrationMessage(''), 5000); // Limpiar el mensaje de registro después de 5 segundos
     }
   };
 

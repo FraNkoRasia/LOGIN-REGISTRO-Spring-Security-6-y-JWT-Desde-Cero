@@ -23,12 +23,13 @@ function ForgotPassword() {
 
     return (
         <div className="container">
-            <h2>Restablecer Contraseña</h2>
+        
             <form onSubmit={handleSubmit}>
+                    <h2 className='Titulo-RestablecerContraseña'>Restablecer Contraseña</h2>
                 <label>
                     Correo Electrónico:
                     <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required
-                    />
+                    placeholder='Ingresa tu Email'/>
                 </label>
                 <button id="boton" type="submit">Enviar Solicitud</button>
             </form>

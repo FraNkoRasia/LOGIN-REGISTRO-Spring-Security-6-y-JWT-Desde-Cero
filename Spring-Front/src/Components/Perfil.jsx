@@ -37,9 +37,10 @@ export default function Perfil({ user }) {
 
     <div className="container">
 
-      <h1 className='h1'>Modify your Profile</h1>
+      <h1 align="center" >Modify your Profile</h1>
 
       <form className='perfil' onSubmit={handleSubmit}>
+        
 
         <div>
           <label for="name" class="form-label">Name</label>
@@ -75,10 +76,11 @@ export default function Perfil({ user }) {
           <button type="submit">Modify</button>
         </div>
       </form>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
+ 
+     
+
+
+    
       
       
     </div>
