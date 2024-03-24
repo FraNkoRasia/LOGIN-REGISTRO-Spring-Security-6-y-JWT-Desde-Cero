@@ -27,7 +27,7 @@ function ResetPasswordForm() {
     }
   
     try {
-      const response = await axios.post(`http://localhost:8080/auth/reset-password/${token}`, { password });
+      const response = await axios.post(`http://localhost:8080/users/reset-password/${token}`, { password });
       setMessage(response.data);
       alert('Contraseña Restablecida - Redirigir al Login');
       navigate('/login');

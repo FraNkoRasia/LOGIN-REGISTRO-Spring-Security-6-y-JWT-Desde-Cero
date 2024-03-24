@@ -10,7 +10,7 @@ function ForgotPassword() {
         e.preventDefault();
 
         try {
-            const response = await axios.post('http://localhost:8080/auth/forgot-password', { email });
+            const response = await axios.post('http://localhost:8080/users/forgot-password', { email });
             setMessage(response.data);
         } catch (error) {
             if (error.response && error.response.data) {
